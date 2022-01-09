@@ -62,8 +62,8 @@ target_include_directories(nrfx PUBLIC
     templates/nRF52840
 )
 
-target_compile_definitions(nrfx PRIVATE
+target_compile_definitions(nrfx PUBLIC
     NRF52840_XXAA BOARD_PCA10059
 )
 
-target_link_libraries(nrfx PRIVATE cmsis)
+target_link_libraries(nrfx PUBLIC cmsis)
