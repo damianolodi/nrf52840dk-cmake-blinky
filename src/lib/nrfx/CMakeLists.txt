@@ -1,6 +1,6 @@
 add_library(nrfx)
 
-target_sources(nrfx PUBLIC 
+target_sources(nrfx PRIVATE 
     drivers/src/nrfx_wdt.c
     #drivers/src/nrfx_usbd.c
     drivers/src/nrfx_uarte.c
