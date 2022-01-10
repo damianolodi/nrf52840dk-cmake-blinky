@@ -63,7 +63,24 @@ target_include_directories(nrfx PUBLIC
 )
 
 target_compile_definitions(nrfx PUBLIC
-    NRF52840_XXAA BOARD_PCA10059
+    BSP_DEFINES_ONLY CONFIG_GPIO_AS_PINRESET
+    FLOAT_ABI_HARD MBR_PRESENT
+)
+
+target_compile_options(nrfx PUBLIC
+    -mthumb -mabi=aapcs
+    -mfloat-abi=hard -mfpu=fpv4-sp-d16
+    -ffunction-sections -fdata-sections -fno-strict-aliasing
+    -fno-builtin -fshort-enums)
+
+target_link_options(nrfx PUBLIC
+    -mthumb -mabi=aapcs
+    -mcpu=cortex-m4
+    -mfloat-abi=hard -mfpu=fpv4-sp-d16
+    -Wl,--gc-sections
+    --specs=nano.specs
+    -O3 -g3
+    -lc -lnosys -lm
 )
 
 target_link_libraries(nrfx PUBLIC cmsis)
