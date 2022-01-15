@@ -38,6 +38,13 @@ $(CONFIGURED_BUILD_DEP):
 reconfig:
 	$(Q) cmake -B $(BUILDRESULTS) $(OPTIONS) $(INTERNAL_OPTIONS)
 
+# Flash the program
+.PHONY: flash
+flash: default
+	@echo Flashing: $(BUILDRESULTS)/src/app/APP.hex
+	nrfjprog -f nrf52 --program $(BUILDRESULTS)/src/app/APP.hex --sectorerase
+	nrfjprog -f nrf52 --reset
+
 .PHONY: clean
 clean:
 	$(Q) if [ -d "$(BUILDRESULTS)" ]; then ninja -C $(BUILDRESULTS) clean; fi

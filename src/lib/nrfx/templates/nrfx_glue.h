@@ -3,11 +3,11 @@
  *
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form, except as embedded into a Nordic
  *    Semiconductor ASA integrated circuit in a product or a software update for
@@ -22,19 +22,20 @@
  * 4. This software, with or without modification, must only be used with a
  *    Nordic Semiconductor ASA integrated circuit.
  *
- * 5. Any software provided in binary form under this license must not be reverse
- *    engineered, decompiled, modified and/or disassembled.
+ * 5. Any software provided in binary form under this license must not be
+ * reverse engineered, decompiled, modified and/or disassembled.
  *
  * THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
  * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
  * OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
  * DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA OR CONTRIBUTORS BE
  * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
- * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
  *
  */
 
@@ -150,14 +151,16 @@ extern "C" {
  *        A compilation error is generated if the DWT unit is not present
  *        in the SoC used.
  */
-#define NRFX_DELAY_DWT_BASED    0
+#define NRFX_DELAY_DWT_BASED 0
+
+#include <soc/nrfx_coredep.h>
 
 /**
  * @brief Macro for delaying the code execution for at least the specified time.
  *
  * @param us_time Number of microseconds to wait.
  */
-#define NRFX_DELAY_US(us_time)
+#define NRFX_DELAY_US(us_time) nrfx_coredep_delay_us(us_time)
 
 //------------------------------------------------------------------------------
 
@@ -165,7 +168,8 @@ extern "C" {
 #define nrfx_atomic_t
 
 /**
- * @brief Macro for storing a value to an atomic object and returning its previous value.
+ * @brief Macro for storing a value to an atomic object and returning its
+ * previous value.
  *
  * @param[in] p_data Atomic memory pointer.
  * @param[in] value  Value to store.
@@ -175,7 +179,8 @@ extern "C" {
 #define NRFX_ATOMIC_FETCH_STORE(p_data, value)
 
 /**
- * @brief Macro for running a bitwise OR operation on an atomic object and returning its previous value.
+ * @brief Macro for running a bitwise OR operation on an atomic object and
+ * returning its previous value.
  *
  * @param[in] p_data Atomic memory pointer.
  * @param[in] value  Value of the second operand in the OR operation.
@@ -240,23 +245,29 @@ extern "C" {
 
 //------------------------------------------------------------------------------
 
-/** @brief Bitmask that defines DPPI channels that are reserved for use outside of the nrfx library. */
-#define NRFX_DPPI_CHANNELS_USED  0
+/** @brief Bitmask that defines DPPI channels that are reserved for use outside
+ * of the nrfx library. */
+#define NRFX_DPPI_CHANNELS_USED 0
 
-/** @brief Bitmask that defines DPPI groups that are reserved for use outside of the nrfx library. */
-#define NRFX_DPPI_GROUPS_USED    0
+/** @brief Bitmask that defines DPPI groups that are reserved for use outside of
+ * the nrfx library. */
+#define NRFX_DPPI_GROUPS_USED 0
 
-/** @brief Bitmask that defines PPI channels that are reserved for use outside of the nrfx library. */
-#define NRFX_PPI_CHANNELS_USED  0
+/** @brief Bitmask that defines PPI channels that are reserved for use outside
+ * of the nrfx library. */
+#define NRFX_PPI_CHANNELS_USED 0
 
-/** @brief Bitmask that defines PPI groups that are reserved for use outside of the nrfx library. */
-#define NRFX_PPI_GROUPS_USED    0
+/** @brief Bitmask that defines PPI groups that are reserved for use outside of
+ * the nrfx library. */
+#define NRFX_PPI_GROUPS_USED 0
 
-/** @brief Bitmask that defines SWI instances that are reserved for use outside of the nrfx library. */
-#define NRFX_SWI_USED           0
+/** @brief Bitmask that defines SWI instances that are reserved for use outside
+ * of the nrfx library. */
+#define NRFX_SWI_USED 0
 
-/** @brief Bitmask that defines TIMER instances that are reserved for use outside of the nrfx library. */
-#define NRFX_TIMERS_USED        0
+/** @brief Bitmask that defines TIMER instances that are reserved for use
+ * outside of the nrfx library. */
+#define NRFX_TIMERS_USED 0
 
 /** @} */
 
@@ -264,4 +275,4 @@ extern "C" {
 }
 #endif
 
-#endif // NRFX_GLUE_H__
+#endif  // NRFX_GLUE_H__
