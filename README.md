@@ -1,12 +1,12 @@
-# nR52840DK CMake Blinky
+# nR52840 DK CMake Blinky
 
-[nR52840DK CMake Blinky](https://github.com/damianolodi/nrf52840dk-cmake-blinky) is yet another blinky project, but it was created with a clear goal in mind: *learning the usage of CMake and the cross-compilation build process.*
+[nR52840 DK CMake Blinky](https://github.com/damianolodi/nrf52840dk-cmake-blinky) is yet another blinky project, but it was created with a clear goal in mind: *learning the usage of CMake and the cross-compilation build process.*
 
 The project is public to be used as a reference for people that wants to learn how to cross-compile without the usage of an IDE. A companion series of blog posts explaining the reasoning process will be added later and linked to this page.
 
 ## Table of Contents
 
-- [nR52840DK CMake Blinky](#nr52840dk-cmake-blinky)
+- [nR52840 DK CMake Blinky](#nr52840-dk-cmake-blinky)
   - [Table of Contents](#table-of-contents)
   - [About the Project](#about-the-project)
   - [Project Status](#project-status)
@@ -49,6 +49,8 @@ You need to install the following dependencies to correctly compile and flash th
 - [CMake](https://cmake.org/)
 - [Ninja](https://ninja-build.org/)
 - [nrfjprog](https://www.nordicsemi.com/Products/Development-tools/nRF-Command-Line-Tools) (included in *nRF Command Line Tools* by Nordic)
+
+In addition, you will also need the [nRF52840 DK board](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk).
 
 ### Getting the Source
 
