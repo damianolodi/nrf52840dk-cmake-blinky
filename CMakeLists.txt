@@ -20,6 +20,8 @@ include(cmake/compiler/CheckAndApplyFlags.cmake)
 include(cmake/linker/map.cmake)
 # Overrides add_executable so that linker script dependencies are registered automatically
 include(cmake/linker/AddExecutableWithLinkerScriptDep.cmake)
+# Provides functions to convert ELF files into .bin and .hex
+include(cmake/Conversions.cmake)
 
 ##################
 # Compiler Flags #
