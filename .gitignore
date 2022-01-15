@@ -4,6 +4,12 @@
 # Sublime-generated Files
 *.sublime-workspace
 
+# VSCode.generated files
+.vscode/
+
+# OS Files
+.DS_Store
+
 ########################
 # C / C++ Ignore Rules #
 ########################
