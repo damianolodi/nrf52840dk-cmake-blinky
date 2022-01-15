@@ -153,12 +153,14 @@ extern "C" {
  */
 #define NRFX_DELAY_DWT_BASED 0
 
+#include <soc/nrfx_coredep.h>
+
 /**
  * @brief Macro for delaying the code execution for at least the specified time.
  *
  * @param us_time Number of microseconds to wait.
  */
-#define NRFX_DELAY_US(us_time)
+#define NRFX_DELAY_US(us_time) nrfx_coredep_delay_us(us_time)
 
 //------------------------------------------------------------------------------
 
