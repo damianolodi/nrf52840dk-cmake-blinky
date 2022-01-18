@@ -11,6 +11,15 @@
 #include "nrf_gpio.h"
 #include "pca10056.h"
 
+void check_error(nrfx_err_t error) {
+    if (error == NRFX_SUCCESS) {
+        return;
+    }
+
+    while (true) {
+    }
+}
+
 /**
  * @brief Configure board peripherals.
  */
