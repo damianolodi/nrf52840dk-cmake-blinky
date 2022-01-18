@@ -10,6 +10,7 @@
 
 #include "nrf_gpio.h"
 #include "nrfx_gpiote.h"
+#include "nrfx_ppi.h"
 #include "nrfx_timer.h"
 #include "pca10056.h"
 
@@ -56,6 +57,16 @@ static void board_config() {
     error = nrfx_gpiote_out_init(gpio_pin, &gpio_out_config);
     check_error(error);
     uint32_t gpiote_out_task_addr = nrfx_gpiote_out_task_addr_get(gpio_pin);
+
+    /*******
+     * PPI *
+     *******/
+    nrf_ppi_channel_t nrf_ppi_channel;
+    error = nrfx_ppi_channel_alloc(&nrf_ppi_channel);
+    check_error(error);
+    error = nrfx_ppi_channel_assign(nrf_ppi_channel, timer_compare_event_addr,
+                                    gpiote_out_task_addr);
+    check_error(error);
 
     // LED_2 will turn on only if configuration is executed without errors
     nrf_gpio_pin_dir_set(LED_2, NRF_GPIO_PIN_DIR_OUTPUT);
