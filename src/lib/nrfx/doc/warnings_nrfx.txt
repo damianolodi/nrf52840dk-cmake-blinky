@@ -1,6 +1,0 @@
-warning: source 'config_dox' is not a readable file or directory... skipping.
-/Users/damiano/Desktop/nRF5_SDK_17_1_0/modules/nrfx/drivers/include/nrfx_temp.h:73: warning: argument 'temperature' of command @param is not found in the argument list of nrfx_temp_data_handler_t(int32_t raw_temperature)
-/Users/damiano/Desktop/nRF5_SDK_17_1_0/modules/nrfx/drivers/include/nrfx_temp.h:77: warning: The following parameter of nrfx_temp_data_handler_t(int32_t raw_temperature) is not documented:
-  parameter 'raw_temperature'
-/Users/damiano/Desktop/nRF5_SDK_17_1_0/modules/nrfx/drivers/include/nrfx_usbd.h:94: warning: Member NRFX_USBD_EPIN(n) (macro definition) of group nrfx_usbd is not documented.
-/Users/damiano/Desktop/nRF5_SDK_17_1_0/modules/nrfx/drivers/include/nrfx_wdt.h:93: warning: unable to resolve reference to 'NRFX_WDT_CONFIG_NO_IRQ' for \ref command

@@ -17,7 +17,12 @@
 static const nrfx_timer_t timer = NRFX_TIMER_INSTANCE(0);
 static void timer_handler(nrf_timer_event_t event_type, void* p_context){};
 
-void check_error(nrfx_err_t error) {
+/**
+ * @brief Stop program exection if error occurs.
+ *
+ * @param error nrfx module error code
+ */
+void check_error(const nrfx_err_t error) {
     if (error == NRFX_SUCCESS) {
         return;
     }
@@ -43,7 +48,7 @@ static void board_config() {
     // Enable the COMPARE event for the used timer
     nrfx_timer_extended_compare(&timer, NRF_TIMER_CC_CHANNEL0, 200 * 1000UL,
                                 NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, false);
-    uint32_t timer_compare_event_addr =
+    const uint32_t timer_compare_event_addr =
         nrfx_timer_event_address_get(&timer, NRF_TIMER_EVENT_COMPARE0);
 
     /**********
@@ -56,7 +61,8 @@ static void board_config() {
     check_error(error);
     error = nrfx_gpiote_out_init(gpio_pin, &gpio_out_config);
     check_error(error);
-    uint32_t gpiote_out_task_addr = nrfx_gpiote_out_task_addr_get(gpio_pin);
+    const uint32_t gpiote_out_task_addr =
+        nrfx_gpiote_out_task_addr_get(gpio_pin);
 
     /*******
      * PPI *

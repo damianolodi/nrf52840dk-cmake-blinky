@@ -2,7 +2,7 @@
 
 [nR52840 DK CMake Blinky](https://github.com/damianolodi/nrf52840dk-cmake-blinky) is yet another blinky project, but it was created with a clear goal in mind: *learning the usage of CMake and the cross-compilation build process.*
 
-The project is public to be used as a reference for people that wants to learn how to cross-compile without the usage of an IDE. A companion series of blog posts explaining the reasoning process will be added later and linked to this page.
+This project can be used as a reference for people that want to learn how to cross-compile without the usage of an IDE. A companion series of blog posts explaining the reasoning process will be added later and linked to this page.
 
 ## Table of Contents
 
@@ -32,9 +32,12 @@ The main project goals are:
 
 ## Project Status
 
-The project is completed and will not be developed further in terms of feature implementation.
+The project is still under development. Code versioning follows the git flow standard.
 
-Documentation and comments will be reviewed/added to the source code in the following versions.
+The main app is always the blinky program, but in each major version the implementation evolves. In particular:
+
+- v1 &rarr; basic blinky implementation using a wait function;
+- v2 &rarr; use the TASK/EVENT logic available in the nrfx module.
 
 ## Getting Started
 

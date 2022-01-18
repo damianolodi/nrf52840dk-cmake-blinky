@@ -9,7 +9,6 @@
  */
 
 #include "board_config.h"
-#include "nrf_delay/nrf_delay.h"
 #include "nrfx.h"
 
 /**
