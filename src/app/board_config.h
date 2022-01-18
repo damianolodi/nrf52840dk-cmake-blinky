@@ -68,6 +68,12 @@ static void board_config() {
                                     gpiote_out_task_addr);
     check_error(error);
 
+    // Enable peripherals
+    error = nrfx_ppi_channel_enable(nrf_ppi_channel);
+    check_error(error);
+    nrfx_gpiote_out_task_enable(gpio_pin);
+    nrfx_timer_enable(&timer);
+
     // LED_2 will turn on only if configuration is executed without errors
     nrf_gpio_pin_dir_set(LED_2, NRF_GPIO_PIN_DIR_OUTPUT);
 }
