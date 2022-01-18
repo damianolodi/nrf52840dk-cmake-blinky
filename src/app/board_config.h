@@ -9,6 +9,7 @@
  */
 
 #include "nrf_gpio.h"
+#include "nrfx_gpiote.h"
 #include "nrfx_timer.h"
 #include "pca10056.h"
 
@@ -43,6 +44,18 @@ static void board_config() {
                                 NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, false);
     uint32_t timer_compare_event_addr =
         nrfx_timer_event_address_get(&timer, NRF_TIMER_EVENT_COMPARE0);
+
+    /**********
+     * GPIOTE *
+     **********/
+    const nrfx_gpiote_pin_t gpio_pin = BSP_LED_0;
+    const nrfx_gpiote_out_config_t gpio_out_config =
+        NRFX_GPIOTE_CONFIG_OUT_TASK_TOGGLE(true);
+    error = nrfx_gpiote_init();
+    check_error(error);
+    error = nrfx_gpiote_out_init(gpio_pin, &gpio_out_config);
+    check_error(error);
+    uint32_t gpiote_out_task_addr = nrfx_gpiote_out_task_addr_get(gpio_pin);
 
     // LED_2 will turn on only if configuration is executed without errors
     nrf_gpio_pin_dir_set(LED_2, NRF_GPIO_PIN_DIR_OUTPUT);
