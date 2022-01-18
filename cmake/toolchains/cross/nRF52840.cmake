@@ -1,10 +1,7 @@
-#############################
+########################
 # nRF52840 (Cortex-M4) #
-#############################
+########################
 
-# CMake includes the toolchain file multiple times when configuring the build,
-# which causes errors for some flags (e.g., --specs=nano.specs).
-# We prevent this with an include guard.
 if(nRF52840_TOOLCHAIN_INCLUDED)
 	return()
 endif()
