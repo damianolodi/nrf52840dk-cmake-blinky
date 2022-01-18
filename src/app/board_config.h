@@ -17,7 +17,11 @@
 static const nrfx_timer_t timer = NRFX_TIMER_INSTANCE(0);
 static void timer_handler(nrf_timer_event_t event_type, void* p_context){};
 
-void check_error(nrfx_err_t error) {
+/**
+ * @brief Stop program exection if error occurs.
+ *
+ * @param error nrfx module error code
+ */
     if (error == NRFX_SUCCESS) {
         return;
     }
